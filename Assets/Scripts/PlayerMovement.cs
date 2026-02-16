@@ -12,7 +12,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float minPitch = -35f;  
     [SerializeField] private float maxPitch = 60f;  
     private float pitch;
+    private bool canMove = true;
 
+
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
         float x = Input.GetAxisRaw("Horizontal");// A/D
         float y = Input.GetAxisRaw("Vertical"); // WS
         moveInput = new Vector2(x,y);
@@ -40,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         cameraPivot.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+
+        
     }
 
     void FixedUpdate()
