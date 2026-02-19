@@ -8,6 +8,8 @@ public class ShootingBooth : MonoBehaviour
     private bool inBooth;
     private PlayerMovement playerMovement;
 
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Camera boothCamera;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -45,6 +47,8 @@ public class ShootingBooth : MonoBehaviour
     {
         Debug.Log("Entered booth mode");
         playerMovement.SetCanMove(false);
+        mainCamera.enabled = false;
+        boothCamera.enabled = true;
         inBooth = true;
     }
 
@@ -52,6 +56,8 @@ public class ShootingBooth : MonoBehaviour
     {
         Debug.Log("Exited booth mode");
         playerMovement.SetCanMove(true);
+         mainCamera.enabled = true;
+        boothCamera.enabled = false;
         inBooth = false;
     }
 }
