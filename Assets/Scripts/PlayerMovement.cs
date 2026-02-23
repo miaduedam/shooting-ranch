@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool value)
     {
         canMove = value;
+        if(!canMove) moveInput = Vector2.zero;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        if(!canMove) return;
         Vector3 camForward = cameraTransform.forward;
         Vector3 camRight = cameraTransform.right;
         
