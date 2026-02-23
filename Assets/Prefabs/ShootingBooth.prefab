@@ -144,6 +144,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1737672325592654626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6652410738783654114}
+  m_Layer: 0
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6652410738783654114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737672325592654626}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7453195, z: -0, w: 0.6667075}
+  m_LocalPosition: {x: 1.837, y: -0.622, z: 0.007}
+  m_LocalScale: {x: 1.3801, y: 1.3801, z: 1.3801}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2106616616035836594}
+  m_LocalEulerAnglesHint: {x: 0, y: 96.373, z: 0}
 --- !u!1 &3054235490023279283
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +287,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3191405022820860089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6364453632538487608}
+  m_Layer: 0
+  m_Name: StandPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6364453632538487608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191405022820860089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.72875375, z: -0, w: 0.6847759}
+  m_LocalPosition: {x: -2.51, y: -0.18, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2106616616035836594}
+  m_LocalEulerAnglesHint: {x: 0, y: 93.564, z: 0}
 --- !u!1 &3772409178669609902
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +350,8 @@ Transform:
   - {fileID: 4598872572323449479}
   - {fileID: 1885852070390868941}
   - {fileID: 2827555562465947144}
+  - {fileID: 6364453632538487608}
+  - {fileID: 6652410738783654114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.136, z: 0}
 --- !u!1 &4804636023021109241
@@ -753,4 +817,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootingBooth
   mainCamera: {fileID: 0}
-  boothCamera: {fileID: 0}
+  boothCamera: {fileID: 3117162163689379596}
+  standPoint: {fileID: 6364453632538487608}
