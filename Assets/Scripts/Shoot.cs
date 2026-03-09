@@ -5,9 +5,11 @@ public class GunShoot : MonoBehaviour
     [Header("References")]
     public Animator gunAnimator;
     public Camera fpsCamera;
+    public AudioSource gunAudio;    // Add this: reference to AudioSource on the gun
+    public AudioClip gunfireClip;   // Add this: your MP3 clip
 
     [Header("Gun Settings")]
-    public float shootRange = 100f;
+    public float shootRange = 1000f;
     public float damage = 1f;
 
     void Update()
@@ -20,10 +22,20 @@ public class GunShoot : MonoBehaviour
 
     void Shoot()
     {
+        // Debug ray to visualize shooting
+        Debug.DrawRay(fpsCamera.transform.position, fpsCamera.transform.forward * shootRange, Color.red, 2f);
+        Debug.Log("Raycast from: " + fpsCamera.transform.position);
+
         // Play gun animation
         if (gunAnimator != null)
         {
             gunAnimator.SetTrigger("Shoot");
+        }
+
+        // Play gun sound
+        if (gunAudio != null && gunfireClip != null)
+        {
+            gunAudio.PlayOneShot(gunfireClip);
         }
 
         // Raycast to detect hits
