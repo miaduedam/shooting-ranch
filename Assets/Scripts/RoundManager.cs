@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using UnityEngine;
+using TMPro;
 
 
 // start round, time, count targets, sent endtime to scoreboard
@@ -12,6 +12,7 @@ private float roundTime = 0f;
 private int totalTargets = 0;
 private int targetsHit = 0;
 
+[SerializeField] private TextMeshProUGUI timeCounterText;
 [SerializeField] ScoreBoard scoreBoard;
 
 
@@ -21,6 +22,7 @@ private int targetsHit = 0;
         roundStarted = false;
         roundEnded = false;
         roundTime = 0f;
+        UpdateTimeCounter();
         targetsHit = 0;
         totalTargets = GameObject.FindGameObjectsWithTag("Target").Length;
         Debug.Log("Total targets: " + totalTargets);
@@ -32,6 +34,7 @@ private int targetsHit = 0;
         if (roundStarted && !roundEnded)
         {
             roundTime += Time.deltaTime;
+            UpdateTimeCounter();
             
         }
     }
@@ -72,7 +75,18 @@ private int targetsHit = 0;
         {
             roundEnded = true;
             Debug.Log("Round ended! Time: " + roundTime + " Targets hit: " + targetsHit);
-            scoreBoard.AddNewTime(roundTime);
+            if (scoreBoard != null)
+            {
+                scoreBoard.AddNewTime(roundTime);
+            }
+        }
+    }
+
+    private void UpdateTimeCounter()
+    {
+        if (timeCounterText != null)
+        {
+            timeCounterText.text = $"Time: {roundTime:F2}s";
         }
     }
 }
