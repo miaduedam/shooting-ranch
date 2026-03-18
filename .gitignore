@@ -1,0 +1,57 @@
+# =========================
+# Unity generated folders
+# =========================
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+
+# =========================
+# Visual Studio / VS Code
+# =========================
+.vscode/
+.vs/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.unityproj
+*.slnx
+
+# =========================
+# Rider
+# =========================
+.idea/
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# Unity Cache / Crash
+# =========================
+MemoryCaptures/
+CrashReports/
+
+# =========================
+# Addressables / Shader Cache
+# =========================
+ShaderCache/
+AddressableAssetsData/*/Temp/
+
+# =========================
+# Backup files
+# =========================
+*.bak
+*.tmp
+*.orig
