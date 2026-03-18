@@ -11,13 +11,8 @@ public class ScoreBoard : MonoBehaviour
 
     private void Start()
     {
-        //UpdateBoard();
-    AddNewTime(14.32f);
-    AddNewTime(12.87f);
-    AddNewTime(15.91f);
-    AddNewTime(11.45f);
- 
-        
+        UpdateBoard();
+          
     }
 
     public void AddNewTime(float newTime)
