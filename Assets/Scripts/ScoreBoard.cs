@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ScoreBoard : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI scoreBoardText;
+    [SerializeField] private TextMeshPro scoreBoardText;
     private List<float> bestTimes = new List<float>();
     private float latestTime = -1f;
 
