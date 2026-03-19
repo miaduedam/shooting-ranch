@@ -1,16 +1,16 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class StartZoneTrigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private RoundManager roundManagerScript;
 
-    // Update is called once per frame
-    void Update()
+     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            roundManagerScript.StartRound();
+            Debug.Log("Player entered start zone");
+        }
     }
 }

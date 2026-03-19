@@ -1,13 +1,16 @@
 using UnityEngine;
-using ExpObj; // needed for ExplosiveObject
+using ExpObj;
+using System.Diagnostics; // needed for ExplosiveObject
 
 public class Target : MonoBehaviour
 {
     [Header("Health Settings")]
     public float health = 1f;
 
+    private bool isHit = false;
     private ExplosiveObject explodeScript;
 
+    private RoundManager roundManagerScript;
     private void Awake()
     {
         // Get the ExplosiveObject component automatically from the same GameObject
@@ -16,6 +19,13 @@ public class Target : MonoBehaviour
         if (explodeScript == null)
         {
             Debug.LogError("ExplosiveObject component not found on " + gameObject.name);
+        }
+
+        // Find the RoundManager in the scene
+        roundManagerScript = FindObjectOfType<RoundManager>();
+        if (roundManagerScript == null)
+        {
+            Debug.LogError("RoundManager not found in the scene.");
         }
     }
 
@@ -31,7 +41,17 @@ public class Target : MonoBehaviour
 
     private void Explode()
     {
-        if (explodeScript != null)
+        if (!isHit)
+        {
+            isHit = true;
+             if (roundManagerScript != null)
+             {
+                 roundManagerScript.RegisterHit();
+             }
+             Debug.Log("Target " + gameObject.name + " hit!");
+        }
+          
+        if (explodeScript != null && !explodeScript.isExploded)
         {
             explodeScript.Explode();
         }
