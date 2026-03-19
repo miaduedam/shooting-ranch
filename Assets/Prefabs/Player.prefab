@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad7945dd3bdc31498ef83b214490c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  cameraTransform: {fileID: 2768069791613638504}
+  moveSpeed: 30
+  cameraTransform: {fileID: 7243608868290947252}
   cameraPivot: {fileID: 2768069791613638504}
   mouseSensitivity: 2
   minPitch: -35
@@ -626,7 +626,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
