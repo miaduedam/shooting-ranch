@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 
-
 // start round, time, count targets, sent endtime to scoreboard
 
 public class RoundManager : MonoBehaviour
@@ -35,8 +34,8 @@ private int targetsHit = 0;
         {
             roundTime += Time.deltaTime;
             UpdateTimeCounter();
-            
         }
+        
     }
 
 
