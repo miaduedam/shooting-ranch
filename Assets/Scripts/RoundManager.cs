@@ -34,8 +34,8 @@ private int targetsHit = 0;
         {
             roundTime += Time.deltaTime;
             UpdateTimeCounter();
-     
         }
+        
     }
 
 
