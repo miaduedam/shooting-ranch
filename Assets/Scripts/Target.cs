@@ -18,14 +18,14 @@ public class Target : MonoBehaviour
 
         if (explodeScript == null)
         {
-            Debug.LogError("ExplosiveObject component not found on " + gameObject.name);
+            UnityEngine.Debug.LogError("ExplosiveObject component not found on " + gameObject.name);
         }
 
         // Find the RoundManager in the scene
         roundManagerScript = FindObjectOfType<RoundManager>();
         if (roundManagerScript == null)
         {
-            Debug.LogError("RoundManager not found in the scene.");
+            UnityEngine.Debug.LogError("RoundManager not found in the scene.");
         }
     }
 
@@ -48,10 +48,10 @@ public class Target : MonoBehaviour
              {
                  roundManagerScript.RegisterHit();
              }
-             Debug.Log("Target " + gameObject.name + " hit!");
+             UnityEngine.Debug.Log("Target " + gameObject.name + " hit!");
         }
           
-        if (explodeScript != null && !explodeScript.isExploded)
+        if (explodeScript != null)
         {
             explodeScript.Explode();
         }
