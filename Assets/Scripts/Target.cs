@@ -18,11 +18,11 @@ public class Target : MonoBehaviour
 
         if (explodeScript == null)
         {
-            Debug.LogError("ExplosiveObject component not found on " + gameObject.name);
+            Debug.Log("No explosiveObject on " + gameObject.name + ", treat as normal target.");
         }
 
         // Find the RoundManager in the scene
-        RoundManager rm = Object.FindFirstObjectByType<RoundManager>();
+        roundManagerScript = FindFirstObjectByType<RoundManager>();
         if (roundManagerScript == null)
         {
             Debug.LogError("RoundManager not found in the scene.");
