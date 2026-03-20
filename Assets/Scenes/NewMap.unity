@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &46581064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8460576998247439449, guid: b8b0df77117770f49b49a56d62d6a27d, type: 3}
+  m_PrefabInstance: {fileID: 996181911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b4109778bb9e42bf0efffeb7de028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreBoard
 --- !u!1 &47408480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6919348905119172455, guid: 1d205c6456b5d3b46a1f1eb6e530c17c, type: 3}
@@ -1814,7 +1825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoundManager
   timeCounterText: {fileID: 1000368554}
-  scoreBoard: {fileID: 0}
+  scoreBoard: {fileID: 46581064}
 --- !u!4 &1128044525
 Transform:
   m_ObjectHideFlags: 0
