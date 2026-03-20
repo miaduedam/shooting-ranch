@@ -18,12 +18,7 @@ private int targetsHit = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        roundStarted = false;
-        roundEnded = false;
-        roundTime = 0f;
-        UpdateTimeCounter();
-        targetsHit = 0;
-        totalTargets = GameObject.FindGameObjectsWithTag("Target").Length;
+        ResetRound();
         Debug.Log("Total targets: " + totalTargets);
     }
 
@@ -35,20 +30,16 @@ private int targetsHit = 0;
             roundTime += Time.deltaTime;
             UpdateTimeCounter();
         }
-        
     }
 
 
     public void StartRound()
     {
-       if (!roundStarted && !roundEnded)
-        {
-            roundStarted = true;
-            Debug.Log("Round started!");
-        } else
-        {
-            Debug.Log("Cannot start round.");
-        }
+        ResetRound();
+        roundStarted = true;
+        Debug.Log("Round started!");
+        
+        
     }
 
 
@@ -73,6 +64,7 @@ private int targetsHit = 0;
         if (roundStarted && !roundEnded)
         {
             roundEnded = true;
+            roundStarted = false;
             Debug.Log("Round ended! Time: " + roundTime + " Targets hit: " + targetsHit);
             if (scoreBoard != null)
             {
@@ -80,6 +72,19 @@ private int targetsHit = 0;
             }
         }
     }
+
+    public void ResetRound()
+{
+    roundStarted = false;
+    roundEnded = false;
+    roundTime = 0f;
+    targetsHit = 0;
+    totalTargets = GameObject.FindGameObjectsWithTag("Target").Length;
+
+    UpdateTimeCounter();
+
+    Debug.Log("Round reset! Total targets: " + totalTargets);
+}
 
     private void UpdateTimeCounter()
     {
